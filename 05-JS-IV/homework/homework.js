@@ -1,18 +1,36 @@
 // No cambies los nombres de las funciones.
 
+
+// este homework lo comparé con el video del 22 de agosto, muy didáctico el mismo.
+
 function crearGato (nombre, edad) {
   // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
+  var crearGato = {
+    nombre: nombre,
+    edad: edad,
+    meow: function() {
+      return "Meow!";
+    }
+  }
+  return crearGato
 }
+
 
 function agregarPropiedad (objeto, property) {
   // Agrega una propiedad al objeto (argumento "objeto") con el valor `null`
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
+  // En mi caso lo realice de dos maneras y no me pasó
+  //la primera: agregarPropiedad.objeto = null;
+  //la segunda: objeto.property = null;
+  
+    objeto[property] = null;
+    return objeto;
 }
 
 function invocarMetodo (objeto, metodo) {
@@ -20,13 +38,15 @@ function invocarMetodo (objeto, metodo) {
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco (objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-
+var producto = objetoMisterioso.numeroMisterioso * 5;
+ return producto;
 }
 
 function eliminarPropiedad (objeto, unaPropiedad) {
@@ -34,19 +54,35 @@ function eliminarPropiedad (objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+  // yo lo hice igual pero poniendo ["unaPropiedad"] entre comillas
+delete objeto[unaPropiedad];
+return objeto;
 }
 
 function nuevoUsuario (nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-
+  var objeto = {
+    nombre: nombre,
+    email: email,
+    password: password,
+  }
+return objeto;
 }
 
 function tieneEmail (usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
+  // no entendí porqué pasó este ejercicio, yo crei que preguntaba el valor definido para el email, 
+  // y no que estaba preguntando por el nombre de la propiedad, es decir, yo entendí que preguntaba
+  // por el value y no por el key
+  if(usuario.email){
+    return true;
+  }else{
+    return false
+  }
 }
 
 function tienePropiedad (objeto, propiedad) {
@@ -54,6 +90,11 @@ function tienePropiedad (objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+  if(objeto.hasOwnProperty(propiedad)) {
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function verificarPassword (usuario, password) {
@@ -61,12 +102,22 @@ function verificarPassword (usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
+  if (usuario.password === password){
+    return true;
+  }else{
+    return false;
+  }
 }
 
 function actualizarPassword (usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
+  //yo lo realicé de la sig manera porque creo que es confusa la consigna, de hecho está mal escrita
+  //usuario.nuevaPassword = "nuevagPassword"
+  //return usuario;
+  usuario.password = nuevaPassword
+  return usuario;
 }
 
 function agregarAmigo (usuario, nuevoAmigo) {
@@ -74,6 +125,13 @@ function agregarAmigo (usuario, nuevoAmigo) {
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // Tu código:
+ // usuario.amigos.push(nuevoAmigo);
+ // return usuario;
+ //yo lo realicé como está arriba y no me pasó. la compañera en el 
+ //video del 22 de agosto en el minuto hora 1:13 si le pasó de la siguiente manera.
+var friends = usuario.amigos;
+friends.push(nuevoAmigo);
+return usuario;
 }
 
 function pasarUsuarioAPremium (usuarios) {
@@ -82,6 +140,20 @@ function pasarUsuarioAPremium (usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  // ejemplo de la compañera
+  // usuarios es una array de objetos es decir [{}, {}, {}];
+  // usuarios = [{esPremiun}, {esPremiun}, {esPremiun}]
+  //              usuarios[0]  usuarios[1]  usuarios[2]
+for(var i = 0; i < usuarios.length; i++){
+  usuarios[i].esPremium = true;
+}
+// video minuto 1:20´
+return usuarios;
+
+// tambien se puede realizar de la sig manera
+// for(var key of usuarios){
+// key.esPremium = true}
+// return usuarios; Esta manera de realizarlo me gustó mucho más
 }
 
 function sumarLikesDeUsuario (usuario) {
@@ -91,6 +163,21 @@ function sumarLikesDeUsuario (usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
+var posts = usuario.posts; // yo lo hice exactamente igual pero sin agregar esta linea y no me pasó
+var suma = 0;
+for(var i = 0; i < posts.length; i++){
+  suma = suma + posts[i].likes;
+}
+return suma;
+// tambien se puede hacer de esta forma
+
+//var posts = usuario.posts; 
+//var suma = 0;
+//
+// for(var key of posts){
+// suma = suma + posts[i].likes;  Me parece más facil de esta manera
+// }
+// return suma;
 }
 
 function agregarMetodoCalculoDescuento (producto) {
@@ -103,7 +190,13 @@ function agregarMetodoCalculoDescuento (producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+producto.calcularPrecioDescuento = function (){
+  var descuento = producto.precio * producto.porcentajeDeDescuento;
+  var precioConDescuento = producto.precio - descuento;
+  return precioConDescuento;
+}
+return producto;
+// todo esto esta en el minuto 1:45 hora cuarenta y cinco
 }
 
 // No modificar nada debajo de esta línea
