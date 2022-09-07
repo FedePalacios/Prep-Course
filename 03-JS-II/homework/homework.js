@@ -5,7 +5,7 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-if (x>y){
+if (x > y){
   return x;
 }else {
   return y;
@@ -16,7 +16,7 @@ function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-  if (edad>=18){
+  if (edad >= 18) {
     return "Allowed"
   }else{
     return "Not allowed"
@@ -188,9 +188,9 @@ function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  if(valor) {
+  if (valor) {
     return "Soy verdadero";
-  }else {
+  } else {
     return "Soy falso";
   }
 
@@ -211,7 +211,7 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
   //Escribe tu código aquí
- // if (numero > 99){
+ // if (numero > 99) Claro lo hice mal porque decía 3 digitos, y No mayor a 2 dígitos.
  //   return true;
  // }
  // else (numero <= 99) {

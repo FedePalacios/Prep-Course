@@ -6,7 +6,7 @@ function devolverPrimerElemento(array) {
   // Tu código:
   // a continuación en verde es como lo hizo la compañera en slack, en colores esta como lo 
   // hice yo e igual pasó
-  //var shift = array.shift()
+  //var shift = array.shift() está mal así porque si bien me devuelve el elemento, tmb lo saca.
  // return shift;
  return array[0];
 

@@ -38,8 +38,9 @@ function suma(x, y) {
   // "x" e "y" son números
   // Suma "x" e "y" juntos y devuelve el valor
   // Tu código:
-  var resultado = x + y;
-  return resultado;
+  // var resultado = x + y;
+  // return resultado;
+  return x + y;
 }
 
 function resta(x, y) {
@@ -54,6 +55,8 @@ function multiplica(x, y) {
   // Tu código:
   var resultado = x * y;
   return resultado;
+  // al igual que el ejercicio anterior se puede hacer así, 
+  // o simplemente return x * y
 }
 
 function divide(x, y) {
@@ -112,6 +115,8 @@ function obtenerResto(x, y) {
   // Tu código:
   var resto = x % y;
   return resto;
+  // al igual que los primeros ejerc. de funciones()
+  // tambien lo puedo resumir asi: return x % y
 }
 
 function esPar(num) {
@@ -149,13 +154,15 @@ function elevarAlCubo(num) {
   // Tu código:
   var elevar3 = num ** 3;
   return elevar3;
+  // tambien lo puedo escribir como: return num ** 3;
 }
 
 function elevar(num, exponent) {
   // Devuelve el valor de "num" elevado al exponente dado en "exponent"
   // Tu código:
-  var elevar = num ** exponent;
-  return elevar;
+  // var elevar = num ** exponent;
+  // return elevar;
+  return num ** exponent;
 }
 
 function redondearNumero(num) {
